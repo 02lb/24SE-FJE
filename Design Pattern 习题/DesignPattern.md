@@ -24,7 +24,6 @@ fje -f <json file> -s <style> -i <icon family>
 FJE可以快速切换**风格**（style），包括：树形（tree）、矩形（rectangle）；
 
 ```
-
 ├─ oranges                             ┌─ oranges ───────────────────────────────┐
 │  └─ mandarin                         │  ├─ mandarin ───────────────────────────┤
 │     ├─ clementine                    │  │  ├─ clementine ──────────────────────┤
