@@ -1,0 +1,29 @@
+{
+    "root_": {
+        "fruits": {
+            "citrus": {
+                "orange": null,
+                "lemon": "sour",
+                "lime": "green and sour"
+            },
+            "berries": {
+                "strawberry": "sweet and red",
+                "blueberry": "sweet and blue"
+            }
+        },
+        "vegetables": {
+            "leafy": {
+                "spinach": "healthy",
+                "kale": "super healthy"
+            },
+            "root_": {
+                "carrot": "orange and crunchy",
+                "beet": "purple and earthy"
+            }
+        },
+        "grains": {
+            "rice": "staple food",
+            "quinoa": "super grain"
+        }
+    }
+}
