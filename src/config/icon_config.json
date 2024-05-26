@@ -1,0 +1,28 @@
+{
+  "iconFamilies": {
+    "default": {
+      "intermediate": "",
+      "leaf": ""
+    },
+    "poker-face": {
+      "intermediate": "♢",
+      "leaf": "♤"
+    },
+    "star-face": {
+      "intermediate": "☆",
+      "leaf": "★"
+    },
+    "heart-face": {
+      "intermediate": "♡",
+      "leaf": "♥"
+    },
+    "club-face": {
+      "intermediate": "♧",
+      "leaf": "♣"
+    },
+    "weather-face":{
+      "intermediate": "☀",
+      "leaf": "☂"
+    }
+  }
+}

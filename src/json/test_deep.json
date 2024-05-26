@@ -1,0 +1,74 @@
+{
+  "company": {
+    "name": "TechCorp",
+    "address": {
+      "street": "123 Tech Street",
+      "city": "Innovation City",
+      "country": "Techland"
+    },
+    "employee1": {
+      "name": "Alice",
+      "position": "Software Engineer",
+      "age": 30,
+      "skills": {
+        "skill1": "Go",
+        "skill2": "Python",
+        "skill3": "Docker"
+      },
+      "projects": {
+        "project1": {
+          "name": "Project X",
+          "duration_months": 12,
+          "status": "completed"
+        },
+        "project2": {
+          "name": "Project Y",
+          "duration_months": 6,
+          "status": "ongoing"
+        }
+      }
+    },
+    "employee2": {
+      "name": "Bob",
+      "position": "Data Scientist",
+      "age": 35,
+      "skills": {
+        "skill1": "Python",
+        "skill2": "R",
+        "skill3": "Machine Learning"
+      },
+      "projects": {
+        "project1": {
+          "name": "Project Z",
+          "duration_months": 8,
+          "status": "completed"
+        }
+      }
+    },
+    "products": {
+      "product1": {
+        "name": "TechGadget",
+        "category": "Electronics",
+        "price": 99.99,
+        "features": {
+          "battery_life": "10 hours",
+          "weight": "1.2 kg",
+          "warranty_years": 2
+        }
+      },
+      "product2": {
+        "name": "SmartHome",
+        "category": "Home Automation",
+        "price": 199.99,
+        "features": {
+          "compatibility1": "Alexa",
+          "compatibility2": "Google Home",
+          "setup_time_minutes": 30,
+          "warranty_years": 3
+        }
+      }
+    },
+    "isPublic": true,
+    "founded": 2005
+  }
+}

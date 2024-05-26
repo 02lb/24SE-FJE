@@ -1,0 +1,89 @@
+{
+  "university": {
+    "name": "Tech University",
+    "location": {
+      "address": {
+        "street": "123 Knowledge Ave",
+        "city": "Edu City",
+        "state": "Innovate State",
+        "country": "EduNation"
+      },
+      "campus": {
+        "north": {
+          "departments": {
+            "computerScience": {
+              "courses": {
+                "course1": {
+                  "name": "Introduction to Programming",
+                  "code": "CS101",
+                  "credits": 4
+                },
+                "course2": {
+                  "name": "Data Structures",
+                  "code": "CS201",
+                  "credits": 4
+                }
+              },
+              "faculty": {
+                "faculty1": {
+                  "name": "Dr. Alan Turing",
+                  "position": "Professor",
+                  "office": {
+                    "building": "CS Building",
+                    "room": "101"
+                  }
+                },
+                "faculty2": {
+                  "name": "Dr. Ada Lovelace",
+                  "position": "Associate Professor",
+                  "office": {
+                    "building": "CS Building",
+                    "room": "102"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "south": {
+          "departments": {
+            "engineering": {
+              "courses": {
+                "course1": {
+                  "name": "Thermodynamics",
+                  "code": "ENG101",
+                  "credits": 3
+                },
+                "course2": {
+                  "name": "Fluid Mechanics",
+                  "code": "ENG201",
+                  "credits": 3
+                }
+              },
+              "faculty": {
+                "faculty1": {
+                  "name": "Dr. Nikola Tesla",
+                  "position": "Professor",
+                  "office": {
+                    "building": "ENG Building",
+                    "room": "201"
+                  }
+                },
+                "faculty2": {
+                  "name": "Dr. Marie Curie",
+                  "position": "Associate Professor",
+                  "office": {
+                    "building": "ENG Building",
+                    "room": "202"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "established": 1890,
+    "type": "Public"
+  }
+}
