@@ -39,13 +39,13 @@ Using IconFamily: poker-face
 中间节点: ♢     叶子节点: ♤  
 ```
 
-**可以在[config/icon_config.json](config/icon_config.json)下配置图标族**
+**可以在[src/config/icon_config.json](src/config/icon_config.json)下配置图标族**
 
-**可以在[json](json)下配置需要可视化的JSON文件**
+**可以在[src/json](src/json)下配置需要可视化的JSON文件**
 
+#### UML-类图：
 
-
-
+![](tex-report/figures/uml-class.png)
 
 #### 效果展示：
 
