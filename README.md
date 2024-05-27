@@ -1,6 +1,10 @@
 ## FJE-GO：一个JSON文件可视化的命令行界面小工具
 
-**运行方式：**
+#### DirTree:
+
+<img src="tex-report/figures/dirtree.png" style="zoom: 33%;" />
+
+#### **运行方式：**
 
 ```bash
 $ fje-go -f <json file> -s <style> -i <icon family>
@@ -31,6 +35,22 @@ $ fje-go -f <json file> -s <style> -i <icon family>
 └─♢apples                                  
    └─♤gala                                 
 
-poker-face-icon-family: 中间节点icon：♢ 叶节点icon：♤    
+Using IconFamily: poker-face
+中间节点: ♢     叶子节点: ♤  
 ```
 
+**可以在[config/icon_config.json](config/icon_config.json)下配置图标族**
+
+**可以在[json](json)下配置需要可视化的JSON文件**
+
+
+
+
+
+#### 效果展示：
+
+> JSON文件为 json/test_long.json
+
+<img src="tex-report/figures/deep-rec.png" style="zoom: 67%;" />
+
+<img src="tex-report/figures/deep-tre.png" style="zoom: 67%;" />
