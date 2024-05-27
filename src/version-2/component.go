@@ -1,7 +1,7 @@
 package main
 
 var firstRoot bool = true //特判第一个root节点
-const maxLength = 50      //矩阵对齐最大长度
+const maxLength = 60      //矩阵对齐最大长度
 
 // Component 接口：中间节点和叶节点都实现这个接口
 type Component interface {
