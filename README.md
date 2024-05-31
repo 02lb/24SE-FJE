@@ -7,12 +7,16 @@
 #### **运行方式：**
 
 ```bash
-$ fje-go -f <json file> -s <style> -i <icon family>
+$ fje-go -f <json file> -s <style> -i <icon family> -help <help>
 ```
+**`-f`指定进行可视化转换的JSON源文件路径**
+
+**`-s`可以快速切换风格（style），包括：树形（tree）、矩形（rectangle）:**
 
 **`-i`指定进行可视化转换的JSON源文件路径**
 
-**`-s`可以快速切换风格（style），包括：树形（tree）、矩形（rectangle）:**
+**`-help`查看Options帮助**
+
 
 ```
 ├─ oranges                             ┌─ oranges ───────────────────────────────┐
