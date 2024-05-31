@@ -9,11 +9,11 @@
 ```bash
 $ fje-go -f <json file> -s <style> -i <icon family> -help <help>
 ```
-**`-f`指定进行可视化转换的JSON源文件路径**
+**`-f`可以指定进行可视化转换的JSON源文件路径**
 
-**`-s`可以快速切换风格（style），包括：树形（tree）、矩形（rectangle）:**
+**`-s`可以快速切换风格(style)，包括：树形（tree）、矩形（rectangle）:**
 
-**`-i`指定进行可视化转换的JSON源文件路径**
+**`-i`可以指定需要显示的图标族(IconFamily)**
 
 **`-help`查看Options帮助**
 
@@ -47,14 +47,21 @@ Using IconFamily: poker-face
 
 **可以在[src/json](src/json)下配置需要可视化的JSON文件**
 
+#### 设计模式：
+
+> 抽象工厂模式、工厂方法模式、组合模式、建造者模式、策略模式、模版模式……..
+
 #### UML-类图：
 
 ![](tex-report/figures/uml-class.png)
 
 #### 效果展示：
 
-> JSON文件为 json/test_long.json
+>简单JSON文件为 json/test.json
 
-<img src="tex-report/figures/deep-rec.png" style="zoom: 67%;" />
+<img src="tex-report/figures/short-show.png" style="zoom:50%;" />
 
-<img src="tex-report/figures/deep-tre.png" style="zoom: 67%;" />
+> 复杂JSON文件为 json/test_long.json
+
+<img src="tex-report/figures/long-show.png" style="zoom: 67%;" />
+

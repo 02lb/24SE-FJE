@@ -295,11 +295,10 @@ FJE-GO项目的UML类图如上图 \ref{fig:uml} 所示，其中类的命名参�
 
 
 \subsection{设计模式}
-\subsubsection{工厂方法模式}
-工厂方法模式（Factory Method Pattern）是一种创建型设计模式，提供了一种创建对象的接口，但由子类决定要实例化的类是哪一个。以此试图将对象的实例化推迟到子类。它主要用于解决对象创建的问题，通过将对象创建的细节封装起来，使得客户端代码无需知道具体的创建过程。
+\subsubsection{抽象工厂模式}\label{sec:abs}
+抽象工厂模式是一种创建型设计模式，它提供一个接口，用于创建一系列相关或相互依赖的对象，而无需指定它们具体的类。核心思想是将对象的创建过程与对象的使用分离，确保在不修改客户端代码的情况下，可以方便地更换具体的工厂，从而创建不同的对象族。
 
-在本FJE-GO项目中，工厂方法模式用于创建不同风格的节点对象，包括中间节点（Container）和叶子节点（Leaf）。
-具体来说，定义了一个抽象工厂接口 Factory，如下：
+在本FJE-GO项目中，使用了抽象工厂接口，它定义了创建抽象产品的方法，包括中间节点（Container）和叶子节点（Leaf）：
 \begin{lstlisting}
 type Factory interface {
     CreateContainer(name, value string) *Container
@@ -307,8 +306,7 @@ type Factory interface {
 }
 \end{lstlisting}
 
-并提供了两个具体的实现 TreeFactory和RectangleFactory，分别用于创建树形风格和矩形风格的节点。下面给出了TreeFactory的具体代码实现：
-
+并提供了两个具体工厂的实现 TreeFactory和RectangleFactory，分别用于创建树形风格和矩形风格的节点。下面给出了TreeFactory的具体代码实现：
 \begin{lstlisting}
 type TreeFactory struct {
 	ContainerIcon string
@@ -324,7 +322,9 @@ func (f *TreeFactory) CreateLeaf(name string, value string) *Leaf {
 }
 \end{lstlisting}
 
-在客户端可以通过不同的风格类型创建不同的工厂来实现可拓展性，符合开闭原则。
+使用抽象工厂接口的优势在于，可以根据依赖抽象工厂接口来使用具体工厂创建具体风格的节点，而不需要直接依赖具体的节点类，这样有利于实现和具体产品的解耦，极大地极高了项目的可扩展性，符合软件工程设计模式的开闭原则。
+
+在客户端可以通过不同的风格类型创建不同的工厂来实现可拓展性：
 \begin{lstlisting}
 // style-dealing
 var factory Factory
@@ -339,6 +339,41 @@ default:
     return
 }
 \end{lstlisting}
+
+
+\subsubsection{工厂方法模式}
+工厂方法模式（Factory Method Pattern）是一种创建型设计模式，提供了一种创建对象的接口，但由子类决定要实例化的类是哪一个。以此试图将对象的实例化推迟到子类。它主要用于解决对象创建的问题，通过将对象创建的细节封装起来，使得客户端代码无需知道具体的创建过程。
+
+在本FJE-GO项目中，在定义的抽象工厂接口（如 \ref{sec:abs} 所述）之中定义了创建节点（包括中间节点Container和叶子节点Leaf）的抽象接口，在抽象工厂不直接指定创建方法实例化哪种风格的节点，而是依赖于具体工厂的实现，体现了工厂方法模式的运用。
+\begin{lstlisting}
+type Factory interface {
+    CreateContainer(name, value string) *Container
+    CreateLeaf(name, value string) *Leaf
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}
+func (f *TreeFactory) CreateContainer(name string, value string) *Container {
+    return &Container{Name: name, Value: value, Icon: f.ContainerIcon, Style: "tree", Last: false}
+}
+
+func (f *TreeFactory) CreateLeaf(name string, value string) *Leaf {
+    return &Leaf{Name: name, Value: value, Icon: f.LeafIcon, Style: "tree", Last: false}
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{建造者模式}
 
@@ -375,7 +410,9 @@ func (b *Builder) Build(root Component, data map[string]interface{}) {
 
 
 \subsubsection{组合模式}
-组合模式（Composite Pattern）是一种结构型设计模式，它允许将对象组合成树形结构以表示“部分-整体”的层次结构。使用组合模式可以很好地利用递归和多态的机制来使用树形结构。在本FJE-GO项目中，Container 类表示树形结构中的中间节点，Leaf类表示叶子节点，它们共同实现了 Component 接口。其中，Container作为中间节点拥有children数据结构，其有Component组合而成。代码如下：
+组合模式（Composite Pattern）是一种结构型设计模式，它允许将对象组合成树形结构以表示“部分-整体”的层次结构。使用组合模式可以很好地利用递归和多态的机制来使用树形结构。
+
+在本FJE-GO项目中，Container 类表示树形结构中的中间节点，Leaf类表示叶子节点，它们共同实现了 Component 接口。其中，Container作为中间节点拥有children数据结构，其有Component组合而成。代码如下：
 
 \begin{lstlisting}
 type Component interface {
@@ -398,9 +435,23 @@ type Container struct {
 对于JSON结构（树形结构），使用组合模式允许在节点中包含其他节点，从而可以递归地构建复杂的树形结构。通过将 Container类中的 Children属性设置为 Component 接口的实现类，实现了树形结构的递归组合，从而用简单的节点类型实现负责树形整体。
 
 
+\subsubsection{策略模式}
+策略模式（Strategy Pattern）是一种行为设计模式，定义了一系列算法，并将每个算法封装起来，使它们可以互相替换。策略模式使得算法可以独立于使用它的客户而变化。
 
+在本FJE-GO项目中，用户可以指令使用的风格类型并通过命令行输入，程序可以根据指定类型来实施不同的策略类型，并创建相应风格的具体工厂。使用策略模式可以根据用户的指定而进行策略的切换，从而灵活地创建不同风格的组件。
+\begin{lstlisting}
+var factory Factory
+switch *style {
+case "tree":
+    factory = &TreeFactory{icon.Intermediate, icon.Leaf}
+case "rectangle":
+    factory = &RectangleFactory{icon.Intermediate, icon.Leaf}
+default:
+    fmt.Println("Unknown style")
+    return
+}
 
-
+\end{lstlisting}
 
 
 
