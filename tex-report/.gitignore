@@ -1,6 +1,5 @@
 .DS_Store
 .texpadtmp
-main.pdf
 draft*.pdf
 
 *.synctex(busy)
